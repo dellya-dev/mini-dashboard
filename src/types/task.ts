@@ -9,4 +9,10 @@ export type Task = {
   priority: TaskPriority
 }
 
+export type TaskFormData = {
+  title: string
+  status: TaskStatus
+  priority: TaskPriority
+}
+
 export type Filter = "all" | "todo" | "in-progress" | "completed"
