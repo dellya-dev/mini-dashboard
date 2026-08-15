@@ -1,4 +1,4 @@
-import type { Task, TaskFormData } from "./types/task.ts"
+import type { Task, TaskFormData, TaskStatus } from "./types/task.ts"
 import './App.css'
 import TaskSection from "./components/TaskSection.tsx"
 import { useState } from "react"
@@ -38,11 +38,24 @@ function App() {
     ])
   }
 
+  function handleChangesStatus(id: number, status: TaskStatus): void {
+    setTasks((tasks) => tasks.map((task) => task.id === id
+      ? { ...task, status }
+      : task
+    ))
+  }
+
+  function handleDeleteTask(id: number): void {
+    setTasks((tasks) => tasks.filter((task) => task.id !== id))
+  }
+
   return (
     <>
       <TaskSection
         tasks={tasks}
         onAddTask={handleAddTask}
+        onChangesStatus={handleChangesStatus}
+        onDeleteTask={handleDeleteTask}
       />
     </>
   )

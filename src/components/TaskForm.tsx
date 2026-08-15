@@ -73,7 +73,6 @@ function TaskForm({ onAddTask }: TaskFormProps) {
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
-
           <button onClick={handleAddButton}>Add</button>
       </div>
     </>
