@@ -20,7 +20,7 @@ function TaskItem({ task, onChangesStatus, onDeleteTask }: TaskItemProps) {
         >
           <option value="todo">Todo</option>
           <option value="in-progress">In-Progress</option>
-          <option value="completeed">Completed</option>
+          <option value="completed">Completed</option>
         </select>
         <p>{task.priority}</p>
         <button onClick={() => onDeleteTask(task.id)}>🗑️</button>

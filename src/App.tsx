@@ -1,4 +1,4 @@
-import type { Task, TaskFormData, TaskStatus } from "./types/task.ts"
+import { type Filter, type Task, type TaskFormData, type TaskStatus } from "./types/task.ts"
 import './App.css'
 import TaskSection from "./components/TaskSection.tsx"
 import { useState } from "react"
@@ -26,6 +26,7 @@ function App() {
   ]
 
   const [tasks, setTasks] = useState<Task[]>(initialTasks)
+  const [filter, setFilter] = useState<Filter>("all")
 
   function handleAddTask(formData: TaskFormData): void {
 
@@ -49,13 +50,27 @@ function App() {
     setTasks((tasks) => tasks.filter((task) => task.id !== id))
   }
 
+  const filteredTasks = 
+    tasks.filter((task) => {
+      if (filter === "todo") {
+        return task.status === "todo"
+      } else if (filter === "in-progress") {
+        return task.status === "in-progress"
+      } else if (filter === "completed") {
+        return task.status === "completed"
+      } else {
+        return "all"
+      }
+    })
+
   return (
     <>
       <TaskSection
-        tasks={tasks}
+        tasks={filteredTasks}
         onAddTask={handleAddTask}
         onChangesStatus={handleChangesStatus}
         onDeleteTask={handleDeleteTask}
+        setFilter={setFilter}
       />
     </>
   )
