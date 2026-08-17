@@ -13,8 +13,16 @@ function StatCard({ title, total, description, format }: StatCardProps) {
         <div>
           <h3>{title}</h3>
           <h2>
-            {format === "number" && <span>{total}</span>}
-            {format === "percent" && <span>{total.toFixed(2)}%</span>}
+            {format === "number" && 
+            <span>{total}</span>}
+            {format === "percent" && 
+            <span>
+              {Number.isInteger(total)
+                ? total
+                : total.toFixed(2)
+              }
+              %
+            </span>}
           </h2>
           <p>{description}</p>
         </div>

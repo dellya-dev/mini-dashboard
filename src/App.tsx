@@ -66,11 +66,17 @@ function App() {
     })
 
   const totalTasks = tasks.length
+
   const totalTodo = tasks.filter((task) => task.status === "todo").length
+
   const todoRate = totalTodo / totalTasks * 100
+
   const totalInProgress = tasks.filter((task) => task.status === "in-progress").length
+
   const inProgressRate = totalInProgress / totalTasks * 100
+
   const totalCompleted =  tasks.filter((task) => task.status === "completed").length
+  
   const completionRate = totalCompleted / totalTasks * 100
 
   return (
