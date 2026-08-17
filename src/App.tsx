@@ -2,6 +2,8 @@ import { type Filter, type Task, type TaskFormData, type TaskStatus } from "./ty
 import './App.css'
 import TaskSection from "./components/TaskSection.tsx"
 import { useState } from "react"
+import Overview from "./components/Overview.tsx"
+
 
 function App() {
   const initialTasks: Task[] = [
@@ -50,7 +52,7 @@ function App() {
     setTasks((tasks) => tasks.filter((task) => task.id !== id))
   }
 
-  const filteredTasks = 
+  const filteredTasks =
     tasks.filter((task) => {
       if (filter === "todo") {
         return task.status === "todo"
@@ -63,8 +65,26 @@ function App() {
       }
     })
 
+  const totalTasks = tasks.length
+  const totalTodo = tasks.filter((task) => task.status === "todo").length
+  const todoRate = totalTodo / totalTasks * 100
+  const totalInProgress = tasks.filter((task) => task.status === "in-progress").length
+  const inProgressRate = totalInProgress / totalTasks * 100
+  const totalCompleted =  tasks.filter((task) => task.status === "completed").length
+  const completionRate = totalCompleted / totalTasks * 100
+
   return (
     <>
+      <Overview
+        totalTasks={totalTasks}
+        totalTodo={totalTodo}
+        todoRate={todoRate}
+        totalInProgress={totalInProgress}
+        inProgressRate={inProgressRate}
+        totalCompleted={totalCompleted}
+        completionRate={completionRate}
+      />
+
       <TaskSection
         tasks={filteredTasks}
         onAddTask={handleAddTask}
