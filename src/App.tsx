@@ -3,6 +3,8 @@ import './App.css'
 import TaskSection from "./components/TaskSection.tsx"
 import { useState } from "react"
 import Overview from "./components/Overview.tsx"
+import Header from "./components/Header.tsx"
+import Sidebar from "./components/Sidebar.tsx"
 
 
 function App() {
@@ -81,6 +83,8 @@ function App() {
 
   return (
     <>
+      <Header />
+      <Sidebar />
       <Overview
         totalTasks={totalTasks}
         totalTodo={totalTodo}
