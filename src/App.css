@@ -1,0 +1,148 @@
+/* Layout */
+
+.app {
+  display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  min-height: 100vh;
+  background: var(--purple);
+  color: white;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 32px 16px;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Main-content */
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Header */
+
+.header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--text);
+}
+
+.header h4 {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Overview */
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* StatCard */
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.stat-card h3 {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-card h2 {
+  margin: 10px 0 4px;
+  color: var(--text);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.stat-card.completion {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: white;
+}
+
+.completion h3,
+.completion h2,
+.completion p {
+  color: white;
+}
+
+.stat-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(91, 33, 182, 0.12);
+}
+
+@media (max-width: 768px) {
+  .overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TaskSection */
+
+.task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TaskForm */
+.task-form {
+  display: flex;
+  gap: 12px;
+}

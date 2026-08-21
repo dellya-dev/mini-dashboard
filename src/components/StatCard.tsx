@@ -1,16 +1,18 @@
+import '../App.css'
+
 type StatCardProps = {
  title: string
  total: number
  description: string
  format: "number" | "percent"
+ variant: "default" | "completion"
 }
 
-function StatCard({ title, total, description, format }: StatCardProps) {
+function StatCard({ title, total, description, format, variant }: StatCardProps) {
 
   return (
     <>
-      <div>
-        <div>
+      <div className={`stat-card ${variant}`}>
           <h3>{title}</h3>
           <h2>
             {format === "number" && 
@@ -26,7 +28,6 @@ function StatCard({ title, total, description, format }: StatCardProps) {
           </h2>
           <p>{description}</p>
         </div>
-      </div>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent } from "react"
 import type { TaskFormData } from "../types/task"
+import '../App.css'
 
 type TaskFormProps = {
   onAddTask: (FormData: TaskFormData) => void
@@ -43,7 +44,7 @@ function TaskForm({ onAddTask }: TaskFormProps) {
 
   return (
     <>
-      <div>
+      <div className="task-form">
         <input 
           type="text" 
           name="title"

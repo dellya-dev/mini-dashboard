@@ -77,31 +77,37 @@ function App() {
 
   const inProgressRate = totalInProgress / totalTasks * 100
 
-  const totalCompleted =  tasks.filter((task) => task.status === "completed").length
-  
+  const totalCompleted = tasks.filter((task) => task.status === "completed").length
+
   const completionRate = totalCompleted / totalTasks * 100
 
   return (
     <>
-      <Header />
-      <Sidebar />
-      <Overview
-        totalTasks={totalTasks}
-        totalTodo={totalTodo}
-        todoRate={todoRate}
-        totalInProgress={totalInProgress}
-        inProgressRate={inProgressRate}
-        totalCompleted={totalCompleted}
-        completionRate={completionRate}
-      />
+      <div className="app">
+        <nav className="sidebar">
+          <Sidebar/>
+        </nav>
+        <main className="main-content">
+          <Header/>
+          <Overview
+            totalTasks={totalTasks}
+            totalTodo={totalTodo}
+            todoRate={todoRate}
+            totalInProgress={totalInProgress}
+            inProgressRate={inProgressRate}
+            totalCompleted={totalCompleted}
+            completionRate={completionRate}
+          />
 
-      <TaskSection
-        tasks={filteredTasks}
-        onAddTask={handleAddTask}
-        onChangesStatus={handleChangesStatus}
-        onDeleteTask={handleDeleteTask}
-        setFilter={setFilter}
-      />
+          <TaskSection
+            tasks={filteredTasks}
+            onAddTask={handleAddTask}
+            onChangesStatus={handleChangesStatus}
+            onDeleteTask={handleDeleteTask}
+            setFilter={setFilter}
+          />
+        </main>
+      </div>
     </>
   )
 }

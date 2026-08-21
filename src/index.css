@@ -1,0 +1,29 @@
+:root {
+  --purple: #7c3aed;
+  --purple-dark: #5b21b6;
+  --purple-light: #ede9fe;
+
+  --background: #f8f7ff;
+  --surface: #ffffff;
+
+  --text: #1f1635;
+  --text-muted: #756b86;
+
+  --border: #e9e4f2;
+
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow: 0 8px 24px rgba(91, 33, 182, 0.08);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+}
