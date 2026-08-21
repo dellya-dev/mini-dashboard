@@ -1,7 +1,7 @@
 import { type Filter, type Task, type TaskFormData, type TaskStatus } from "./types/task.ts"
 import './App.css'
 import TaskSection from "./components/TaskSection.tsx"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Overview from "./components/Overview.tsx"
 import Header from "./components/Header.tsx"
 import Sidebar from "./components/Sidebar.tsx"
@@ -29,7 +29,16 @@ function App() {
     }
   ]
 
-  const [tasks, setTasks] = useState<Task[]>(initialTasks)
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const saved = localStorage.getItem("tasks")
+    if (saved) {
+      const parsed = JSON.parse(saved)
+      return parsed
+    } else {
+      return initialTasks
+    }
+  })
+
   const [filter, setFilter] = useState<Filter>("all")
 
   function handleAddTask(formData: TaskFormData): void {
@@ -81,14 +90,18 @@ function App() {
 
   const completionRate = totalCompleted / totalTasks * 100
 
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  }, [tasks])
+
   return (
     <>
       <div className="app">
         <nav className="sidebar">
-          <Sidebar/>
+          <Sidebar />
         </nav>
         <main className="main-content">
-          <Header/>
+          <Header />
           <Overview
             totalTasks={totalTasks}
             totalTodo={totalTodo}
