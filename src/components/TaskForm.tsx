@@ -4,9 +4,11 @@ import '../App.css'
 
 type TaskFormProps = {
   onAddTask: (FormData: TaskFormData) => void
+  error: string
+  setError: (value: string) => void
 }
 
-function TaskForm({ onAddTask }: TaskFormProps) {
+function TaskForm({ onAddTask, error, setError }: TaskFormProps) {
 
   const [formData, setFormData] = useState<TaskFormData>({
     title: "",
@@ -21,6 +23,7 @@ function TaskForm({ onAddTask }: TaskFormProps) {
         [e.target.name]: e.target.value
       }
     )
+     setError("")
   }
 
   function handleFormDataSelect(e: ChangeEvent<HTMLSelectElement>) {
@@ -77,10 +80,10 @@ function TaskForm({ onAddTask }: TaskFormProps) {
           </select>
 
           <button 
-            disabled={formData.title === ""}
             onClick={handleAddButton}
             >Add
           </button>
+          {error && <p className="error-title">{error}</p>}
       </div>
     </>
   )

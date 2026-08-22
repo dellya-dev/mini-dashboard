@@ -11,14 +11,18 @@ type TaskSectionProps = {
   onDeleteTask: (id: number) => void
   setFilter: (filter: Filter) => void
   filter: TaskFilter
+  error: string
+  setError: (value: string) => void
 }
 
-function TaskSection({ tasks, onAddTask, onChangesStatus,  onDeleteTask, setFilter, filter }: TaskSectionProps) {
+function TaskSection({ tasks, onAddTask, onChangesStatus,  onDeleteTask, setFilter, filter, error, setError }: TaskSectionProps) {
   return (
     <>
       <div className="task-section">
         <TaskForm 
           onAddTask={onAddTask}
+          error={error}
+          setError={setError}
         />
         <FilterBar 
           setFilter={setFilter}

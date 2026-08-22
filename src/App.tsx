@@ -41,8 +41,13 @@ function App() {
 
   const [filter, setFilter] = useState<Filter>("all")
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [error, setError] = useState("")
 
   function handleAddTask(formData: TaskFormData): void {
+    if (formData.title.trim() === "") {
+      setError("Please add your task title")
+      return
+    }
 
     setTasks((prev) => [
       ...prev,
@@ -125,6 +130,8 @@ function App() {
             onDeleteTask={handleDeleteTask}
             setFilter={setFilter}
             filter={filter}
+            error={error}
+            setError={setError}
           />
         </main>
       </div>

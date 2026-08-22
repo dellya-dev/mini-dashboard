@@ -187,12 +187,20 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+}
+
+.error-title {
+  position: absolute;
+  top: 34px;
+  right: 2px;
+  font-size: 14px;
 }
 
 /* TaskForm */
 .task-form {
   display: flex;
-  gap: 12px;
+  gap: 18px;
 }
 
 .task-title-input {
@@ -258,6 +266,10 @@
 
   .task-form button {
     flex: 1;
+  }
+
+  .error-title {
+    top: 96px;
   }
 }
 
