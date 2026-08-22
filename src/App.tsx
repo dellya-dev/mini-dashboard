@@ -40,6 +40,7 @@ function App() {
   })
 
   const [filter, setFilter] = useState<Filter>("all")
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   function handleAddTask(formData: TaskFormData): void {
 
@@ -97,11 +98,16 @@ function App() {
   return (
     <>
       <div className="app">
-        <nav className="sidebar">
-          <Sidebar />
+        <nav>
+          <Sidebar 
+            isSidebarOpen={isSidebarOpen}
+          />
         </nav>
         <main className="main-content">
-          <Header />
+          <Header 
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+          />
           <Overview
             totalTasks={totalTasks}
             totalTodo={totalTodo}
