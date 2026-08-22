@@ -118,6 +118,7 @@ function App() {
             onChangesStatus={handleChangesStatus}
             onDeleteTask={handleDeleteTask}
             setFilter={setFilter}
+            filter={filter}
           />
         </main>
       </div>

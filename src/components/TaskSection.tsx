@@ -1,4 +1,4 @@
-import type { Filter, Task, TaskFormData, TaskStatus } from "../types/task.ts"
+import type { Filter, Task, TaskFilter, TaskFormData, TaskStatus } from "../types/task.ts"
 import FilterBar from "./FilterBar.tsx"
 import TaskForm from "./TaskForm.tsx"
 import TaskList from "./TaskList.tsx"
@@ -10,9 +10,10 @@ type TaskSectionProps = {
   onChangesStatus: (id: number, status: TaskStatus) => void
   onDeleteTask: (id: number) => void
   setFilter: (filter: Filter) => void
+  filter: TaskFilter
 }
 
-function TaskSection({ tasks, onAddTask, onChangesStatus,  onDeleteTask, setFilter  }: TaskSectionProps) {
+function TaskSection({ tasks, onAddTask, onChangesStatus,  onDeleteTask, setFilter, filter }: TaskSectionProps) {
   return (
     <>
       <div className="task-section">
@@ -21,6 +22,7 @@ function TaskSection({ tasks, onAddTask, onChangesStatus,  onDeleteTask, setFilt
         />
         <FilterBar 
           setFilter={setFilter}
+          filter={filter}
         />
         <TaskList
           tasks={tasks}

@@ -46,6 +46,7 @@ function TaskForm({ onAddTask }: TaskFormProps) {
     <>
       <div className="task-form">
         <input 
+          className="task-title-input"
           type="text" 
           name="title"
           value={formData.title}

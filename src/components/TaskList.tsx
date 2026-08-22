@@ -1,5 +1,6 @@
 import type { Task, TaskStatus } from "../types/task"
 import TaskItem from "./TaskItem"
+import '../App.css'
 
 type TaksListProps = {
   tasks: Task[]
@@ -11,7 +12,7 @@ function TaskList({ tasks, onChangesStatus, onDeleteTask }: TaksListProps) {
 
   return (
     <>
-      <div>
+      <div className="task-list">
         {tasks.map((task) => {
           return (
             <TaskItem 
