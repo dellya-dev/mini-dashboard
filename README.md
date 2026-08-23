@@ -37,32 +37,33 @@ This project was built to strengthen my understanding of React application archi
 
 ### React Fundamentals
 
-React component architecture
-TypeScript fundamentals
-Typed component props
-Union types
-Local state management
-Derived data
-Controlled form inputs
-Form validation
-Event handling
-Array methods such as map() and filter()
-Conditional rendering
-CSS Flexbox
-CSS Grid
-Responsive design
-Reusable components
-Basic UI/UX decisions
+* React component architecture
+* TypeScript fundamentals
+* Typed component props
+* Union types
+* Local state management
+* Derived data
+* Controlled form inputs
+* Form validation
+* Event handling
+* Array methods such as map() and filter()
+* Conditional rendering
+* CSS Flexbox
+* CSS Grid
+* Responsive design
+* Reusable components
+* Basic UI/UX decisions
 
 ---
 
 ## 🛠️ Tech Stack
-
+```
 React
 TypeScript
 Vite
 CSS
 React Hooks
+```
 ---
 
 ## Dashboard Statistics
@@ -70,12 +71,13 @@ React Hooks
 The dashboard calculates statistics dynamically from the current task data.
 
 It displays:
-
+```
 Total Tasks
 Total Todo
 Total In Progress
 Total Completed
 Completion Rate
+```
 
 Percentage values are calculated from the task data and formatted for a cleaner UI presentation.
 ---
@@ -95,57 +97,58 @@ App
     ├── TaskList
     │   └── TaskItem
 ```
-Header
+# Header
 
 Contains the dashboard title, subtitle, and the mobile sidebar toggle.
 
-Sidebar
+# Sidebar
 
 Provides simple dashboard navigation and becomes collapsible on smaller screens.
 
-Overview
+# Overview
 
 Displays derived task statistics through reusable StatCard components.
 
-TaskSection
+# TaskSection
 
 Contains the main task management functionality:
-
+```
 Task creation
 Task filtering
 Task list
 Status changes
 Task deletion
 State Management
-
+```
 The project uses React local state to manage UI and application data.
 
 Examples include:
-
+```
 Task collection
 Form data
 Active task filter
 Sidebar visibility
 Form validation feedback
-
+```
 Derived statistics are calculated from the task collection rather than being stored as separate state.
 
-TypeScript
+# TypeScript
 
 TypeScript is used to provide type safety throughout the application.
 
 Examples include:
-
+```
 Task data types
 Task status types
 Task priority types
 Component props
 Event types
 State types
-
+```
 The project also uses union types for values with a limited set of possible options, such as task status and priority.
+---
 
-Responsive Design
+## Responsive Design
 
 The dashboard is designed to adapt to different screen sizes.
 
