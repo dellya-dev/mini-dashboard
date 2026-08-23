@@ -1,4 +1,4 @@
-#Task Dashboard
+## Task Dashboard
 
 A responsive task management dashboard built with React, TypeScript, and Vite.
 
@@ -170,7 +170,7 @@ Installation
 
 Clone the repository and install the dependencies:
 ```
-git clone <>
+git clone <https://github.com/dellya-dev/mini-dashboard>
 ```
 
 ```
