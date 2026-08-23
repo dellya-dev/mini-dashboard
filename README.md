@@ -83,7 +83,7 @@ Percentage values are calculated from the task data and formatted for a cleaner 
 ## 📁 Project Structure
 
 The application is divided into several main components:
-
+```
 App
 ├── Header
 ├── Sidebar
@@ -94,6 +94,7 @@ App
     ├── FilterBar
     ├── TaskList
     │   └── TaskItem
+```
 Header
 
 Contains the dashboard title, subtitle, and the mobile sidebar toggle.
