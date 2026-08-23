@@ -1,75 +1,203 @@
-# React + TypeScript + Vite
+#Task Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive task management dashboard built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+This project was created to practice building a dashboard application from the ground up, focusing on component architecture, state management, derived data, TypeScript, form handling, and responsive UI design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🌐 Live Demo
 
 ```
+https://
+```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✨ Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* Add new tasks
+* Set task status
+* Set task priority
+* Change task status
+* Delete tasks
+* Filter tasks by status
+* Display total task statistics
+* Calculate task distribution by status
+* Calculate completion rate
+* Form validation for empty task titles
+* Responsive dashboard layout
+* Responsive sidebar with mobile toggle
+
+---
+
+## 📖 What I Learned
+
+This project was built to strengthen my understanding of React application architecture, state management, and component optimization.
+
+### React Fundamentals
+
+React component architecture
+TypeScript fundamentals
+Typed component props
+Union types
+Local state management
+Derived data
+Controlled form inputs
+Form validation
+Event handling
+Array methods such as map() and filter()
+Conditional rendering
+CSS Flexbox
+CSS Grid
+Responsive design
+Reusable components
+Basic UI/UX decisions
+
+---
+
+## 🛠️ Tech Stack
+
+React
+TypeScript
+Vite
+CSS
+React Hooks
+---
+
+## Dashboard Statistics
+
+The dashboard calculates statistics dynamically from the current task data.
+
+It displays:
+
+Total Tasks
+Total Todo
+Total In Progress
+Total Completed
+Completion Rate
+
+Percentage values are calculated from the task data and formatted for a cleaner UI presentation.
+---
+
+## 📁 Project Structure
+
+The application is divided into several main components:
+
+App
+├── Header
+├── Sidebar
+├── Overview
+│   └── StatCard
+└── TaskSection
+    ├── TaskForm
+    ├── FilterBar
+    ├── TaskList
+    │   └── TaskItem
+Header
+
+Contains the dashboard title, subtitle, and the mobile sidebar toggle.
+
+Sidebar
+
+Provides simple dashboard navigation and becomes collapsible on smaller screens.
+
+Overview
+
+Displays derived task statistics through reusable StatCard components.
+
+TaskSection
+
+Contains the main task management functionality:
+
+Task creation
+Task filtering
+Task list
+Status changes
+Task deletion
+State Management
+
+The project uses React local state to manage UI and application data.
+
+Examples include:
+
+Task collection
+Form data
+Active task filter
+Sidebar visibility
+Form validation feedback
+
+Derived statistics are calculated from the task collection rather than being stored as separate state.
+
+TypeScript
+
+TypeScript is used to provide type safety throughout the application.
+
+Examples include:
+
+Task data types
+Task status types
+Task priority types
+Component props
+Event types
+State types
+
+The project also uses union types for values with a limited set of possible options, such as task status and priority.
+
+Responsive Design
+
+The dashboard is designed to adapt to different screen sizes.
+
+Desktop
+
+The sidebar remains visible while the main content occupies the remaining available space.
+
+Mobile
+
+The sidebar becomes collapsible through a toggle button, allowing the main content to use the available screen width more efficiently.
+
+The task form, overview cards, and task items also adapt to smaller screen sizes.
+
+---
+
+## 🚀 Getting Started
+
+Installation
+
+Clone the repository and install the dependencies:
+```
+git clone <>
+```
 
 ```
+npm install
+
+```
+Run Development Server
+```
+npm run dev
+```
+
+Open the local development URL shown in the terminal.
+
+Build
+
+To create a production build:
+```
+npm run build
+```
+Clone the repository
+
+---
+
+## Project Status
+
+Completed and tested.
+
+The application has been tested across its main functionality and responsive layouts.
+
+## License
+
+This project was created for learning and portfolio purposes.
+
+
