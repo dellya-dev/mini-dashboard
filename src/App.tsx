@@ -46,6 +46,9 @@ function App() {
   function handleAddTask(formData: TaskFormData): void {
     if (formData.title.trim() === "") {
       setError("Please add your task title")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
       return
     }
 

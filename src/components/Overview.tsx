@@ -32,36 +32,27 @@ function Overview({
         <StatCard
           title="Total Todo"
           total={totalTodo}
-          description={Number.isInteger(todoRate)
-            ? `${todoRate}` + "% of all tasks"
-            : todoRate.toFixed(2)
-            + "% of all tasks"}
+          description={Math.round(todoRate) + "% of all tasks"}
           format="number"
           variant="default"
         />
         <StatCard
           title="Total In Progress"
           total={totalInProgress}
-          description={Number.isInteger(inProgressRate)
-            ? `${inProgressRate}` + "% of all tasks"
-            : inProgressRate.toFixed(2)
-            + "% of all tasks"}
+          description={Math.round(inProgressRate) + "% of all tasks"}
           format="number"
           variant="default"
         />
         <StatCard
           title="Total Completed"
           total={totalCompleted}
-          description={Number.isInteger(completionRate)
-            ? `${completionRate}` + "% of all tasks"
-            : completionRate.toFixed(2)
-            + "% of all tasks"}
+          description={Math.round(completionRate) + "% of all tasks"}
           format="number"
           variant="default"
         />
         <StatCard
           title="Completion Rate"
-          total={completionRate}
+          total={Math.round(completionRate)}
           description="Rate completed tasks"
           format="percent"
           variant="completion"

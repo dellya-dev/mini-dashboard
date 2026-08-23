@@ -273,6 +273,17 @@
   }
 }
 
+@media (max-width: 480px) {
+  .error-title {
+    top: 160px;
+    right: 80px;
+  }
+
+  .task-form button {
+    margin-bottom: 16px;
+  }
+}
+
 /* FilterBar */
 
 .filter-bar {
