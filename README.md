@@ -9,7 +9,7 @@ This project was created to practice building a dashboard application from the g
 ## 🌐 Live Demo
 
 ```
-https://
+https://mini-dashboard-henna.vercel.app/
 ```
 
 ---
